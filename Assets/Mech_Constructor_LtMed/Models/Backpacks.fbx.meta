@@ -1,0 +1,100 @@
+fileFormatVersion: 2
+guid: e155e8e6e80fef5458c0adbca729418c
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Backpack_ballons
+    100002: Backpack_container
+    100004: Backpack_jetpack_1x
+    100006: Backpack_jetpack_2X
+    100008: //RootNode
+    100010: Geom_Backpack_ballons
+    100012: Geom_Backpack_container
+    100014: Geom_Backpack_jetpack_1x
+    100016: Geom_Backpack_jetpack_2X
+    400000: Backpack_ballons
+    400002: Backpack_container
+    400004: Backpack_jetpack_1x
+    400006: Backpack_jetpack_2X
+    400008: //RootNode
+    400010: Geom_Backpack_ballons
+    400012: Geom_Backpack_container
+    400014: Geom_Backpack_jetpack_1x
+    400016: Geom_Backpack_jetpack_2X
+    2300000: Geom_Backpack_ballons
+    2300002: Geom_Backpack_container
+    2300004: Geom_Backpack_jetpack_1x
+    2300006: Geom_Backpack_jetpack_2X
+    3300000: Geom_Backpack_ballons
+    3300002: Geom_Backpack_container
+    3300004: Geom_Backpack_jetpack_1x
+    3300006: Geom_Backpack_jetpack_2X
+    4300000: Geom_Backpack_ballons
+    4300002: Geom_Backpack_jetpack_1x
+    4300004: Geom_Backpack_jetpack_2X
+    4300006: Geom_Backpack_container
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

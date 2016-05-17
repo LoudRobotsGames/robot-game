@@ -1,0 +1,163 @@
+fileFormatVersion: 2
+guid: 19e438646004fdf42b177a33d5deb89a
+timeCreated: 1462131557
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Barricade_05
+    100002: Barricade_06
+    100004: Barricade_07
+    100006: Barricade_08
+    100008: Barricade_09
+    100010: Barricade_10
+    100012: Barricade_11
+    100014: Barricade_2
+    100016: Box_Big
+    100018: Box_Big01
+    100020: Box_Big02
+    100022: Box_Big03
+    100024: Box_Big04
+    100026: Col
+    100028: //RootNode
+    100030: Truck04_Col
+    100032: Truck04_Col01
+    100034: Truck04_Col04
+    100036: Truck04_Col05
+    400000: Barricade_05
+    400002: Barricade_06
+    400004: Barricade_07
+    400006: Barricade_08
+    400008: Barricade_09
+    400010: Barricade_10
+    400012: Barricade_11
+    400014: Barricade_2
+    400016: Box_Big
+    400018: Box_Big01
+    400020: Box_Big02
+    400022: Box_Big03
+    400024: Box_Big04
+    400026: Col
+    400028: //RootNode
+    400030: Truck04_Col
+    400032: Truck04_Col01
+    400034: Truck04_Col04
+    400036: Truck04_Col05
+    2300000: Barricade_05
+    2300002: Barricade_06
+    2300004: Barricade_07
+    2300006: Barricade_08
+    2300008: Barricade_09
+    2300010: Barricade_10
+    2300012: Barricade_11
+    2300014: Barricade_2
+    2300016: Box_Big
+    2300018: Box_Big01
+    2300020: Box_Big02
+    2300022: Box_Big03
+    2300024: Box_Big04
+    2300026: Col
+    2300028: Truck04_Col
+    2300030: Truck04_Col01
+    2300032: Truck04_Col04
+    2300034: Truck04_Col05
+    3300000: Barricade_05
+    3300002: Barricade_06
+    3300004: Barricade_07
+    3300006: Barricade_08
+    3300008: Barricade_09
+    3300010: Barricade_10
+    3300012: Barricade_11
+    3300014: Barricade_2
+    3300016: Box_Big
+    3300018: Box_Big01
+    3300020: Box_Big02
+    3300022: Box_Big03
+    3300024: Box_Big04
+    3300026: Col
+    3300028: Truck04_Col
+    3300030: Truck04_Col01
+    3300032: Truck04_Col04
+    3300034: Truck04_Col05
+    4300000: Col
+    4300002: Box_Big
+    4300004: Box_Big01
+    4300006: Box_Big02
+    4300008: Box_Big03
+    4300010: Box_Big04
+    4300012: Truck04_Col
+    4300014: Truck04_Col01
+    4300016: Truck04_Col04
+    4300018: Truck04_Col05
+    4300020: Barricade_2
+    4300022: Barricade_05
+    4300024: Barricade_06
+    4300026: Barricade_07
+    4300028: Barricade_08
+    4300030: Barricade_09
+    4300032: Barricade_10
+    4300034: Barricade_11
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

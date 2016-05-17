@@ -1,0 +1,272 @@
+fileFormatVersion: 2
+guid: 33eb7223f81daa44a834f81450c601eb
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Cockpit_tractor
+    100002: End_Heel_L
+    100004: End_Heel_R
+    100006: End_Toe_L
+    100008: End_Toe_R
+    100010: Foot_L
+    100012: Foot_R
+    100014: Heel_L
+    100016: Heel_R
+    100018: Hip_L
+    100020: Hip_R
+    100022: HIPS
+    100024: Laser_lvl5
+    100026: //RootNode
+    100028: Mount_cockpit
+    100030: Mount_Weapon_L
+    100032: Mount_Weapon_R
+    100034: Pelvis
+    100036: Shin_L
+    100038: Shin_R
+    100040: Shoulders_med_wall3
+    100042: Toe_L
+    100044: Toe_R
+    100046: Top
+    400000: Cockpit_tractor
+    400002: End_Heel_L
+    400004: End_Heel_R
+    400006: End_Toe_L
+    400008: End_Toe_R
+    400010: Foot_L
+    400012: Foot_R
+    400014: Heel_L
+    400016: Heel_R
+    400018: Hip_L
+    400020: Hip_R
+    400022: HIPS
+    400024: Laser_lvl5
+    400026: //RootNode
+    400028: Mount_cockpit
+    400030: Mount_Weapon_L
+    400032: Mount_Weapon_R
+    400034: Pelvis
+    400036: Shin_L
+    400038: Shin_R
+    400040: Shoulders_med_wall3
+    400042: Toe_L
+    400044: Toe_R
+    400046: Top
+    7400000: Legs_ltMed_idle
+    7400002: Legs_ltMed_idle_simple
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.1
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Legs_ltMed_idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 300
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: HIPS
+        weight: 1
+      - path: HIPS/Pelvis
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Foot_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Foot_L/Heel_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Foot_L/Heel_L/End_Heel_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Foot_L/Toe_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Foot_L/Toe_L/End_Toe_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Foot_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Foot_R/Heel_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Foot_R/Heel_R/End_Heel_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Foot_R/Toe_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Foot_R/Toe_R/End_Toe_R
+        weight: 1
+      - path: HIPS/Pelvis/Top
+        weight: 1
+      - path: HIPS/Pelvis/Top/Shoulders_med_wall3
+        weight: 1
+      - path: HIPS/Pelvis/Top/Shoulders_med_wall3/Mount_cockpit
+        weight: 1
+      - path: HIPS/Pelvis/Top/Shoulders_med_wall3/Mount_cockpit/Cockpit_tractor
+        weight: 1
+      - path: HIPS/Pelvis/Top/Shoulders_med_wall3/Mount_Weapon_L
+        weight: 1
+      - path: HIPS/Pelvis/Top/Shoulders_med_wall3/Mount_Weapon_L/Laser_lvl5
+        weight: 1
+      - path: HIPS/Pelvis/Top/Shoulders_med_wall3/Mount_Weapon_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Legs_ltMed_idle_simple
+      takeName: Take 001
+      firstFrame: 170
+      lastFrame: 260
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: HIPS
+        weight: 1
+      - path: HIPS/Pelvis
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Foot_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Foot_L/Heel_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Foot_L/Heel_L/End_Heel_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Foot_L/Toe_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Foot_L/Toe_L/End_Toe_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Foot_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Foot_R/Heel_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Foot_R/Heel_R/End_Heel_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Foot_R/Toe_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Foot_R/Toe_R/End_Toe_R
+        weight: 1
+      - path: HIPS/Pelvis/Top
+        weight: 1
+      - path: HIPS/Pelvis/Top/Shoulders_med_wall3
+        weight: 1
+      - path: HIPS/Pelvis/Top/Shoulders_med_wall3/Mount_cockpit
+        weight: 1
+      - path: HIPS/Pelvis/Top/Shoulders_med_wall3/Mount_cockpit/Cockpit_tractor
+        weight: 1
+      - path: HIPS/Pelvis/Top/Shoulders_med_wall3/Mount_Weapon_L
+        weight: 1
+      - path: HIPS/Pelvis/Top/Shoulders_med_wall3/Mount_Weapon_L/Laser_lvl5
+        weight: 1
+      - path: HIPS/Pelvis/Top/Shoulders_med_wall3/Mount_Weapon_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

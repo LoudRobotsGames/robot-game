@@ -1,0 +1,132 @@
+fileFormatVersion: 2
+guid: b4590b8467c70bd4c82d2daa6616c8cd
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Cockpit_copter
+    100002: Cockpit_fox
+    100004: Cockpit_jet
+    100006: Cockpit_tractor
+    100008: //RootNode
+    100010: Geom_Cockpit_copter
+    100012: Geom_Cockpit_fox
+    100014: Geom_Cockpit_jet
+    100016: Geom_Cockpit_tractor
+    100018: Mount_backpack
+    100020: Mount_backpack 1
+    100022: Mount_backpack 2
+    100024: Mount_backpack 3
+    100026: Mount_Weapon_L
+    100028: Mount_Weapon_L 1
+    100030: Mount_Weapon_L 2
+    100032: Mount_Weapon_L 3
+    100034: Mount_Weapon_R
+    100036: Mount_Weapon_R 1
+    100038: Mount_Weapon_R 2
+    100040: Mount_Weapon_R 3
+    100042: Mount_Weapon_top
+    100044: Mount_Weapon_top 1
+    100046: Mount_Weapon_top 2
+    100048: Mount_Weapon_top 3
+    400000: Cockpit_copter
+    400002: Cockpit_fox
+    400004: Cockpit_jet
+    400006: Cockpit_tractor
+    400008: //RootNode
+    400010: Geom_Cockpit_copter
+    400012: Geom_Cockpit_fox
+    400014: Geom_Cockpit_jet
+    400016: Geom_Cockpit_tractor
+    400018: Mount_backpack
+    400020: Mount_backpack 1
+    400022: Mount_backpack 2
+    400024: Mount_backpack 3
+    400026: Mount_Weapon_L
+    400028: Mount_Weapon_L 1
+    400030: Mount_Weapon_L 2
+    400032: Mount_Weapon_L 3
+    400034: Mount_Weapon_R
+    400036: Mount_Weapon_R 1
+    400038: Mount_Weapon_R 2
+    400040: Mount_Weapon_R 3
+    400042: Mount_Weapon_top
+    400044: Mount_Weapon_top 1
+    400046: Mount_Weapon_top 2
+    400048: Mount_Weapon_top 3
+    2300000: Geom_Cockpit_copter
+    2300002: Geom_Cockpit_fox
+    2300004: Geom_Cockpit_jet
+    2300006: Geom_Cockpit_tractor
+    3300000: Geom_Cockpit_copter
+    3300002: Geom_Cockpit_fox
+    3300004: Geom_Cockpit_jet
+    3300006: Geom_Cockpit_tractor
+    4300000: Geom_Cockpit_jet
+    4300002: Geom_Cockpit_copter
+    4300004: Geom_Cockpit_tractor
+    4300006: Geom_Cockpit_fox
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
