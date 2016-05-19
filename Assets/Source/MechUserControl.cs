@@ -131,7 +131,10 @@ public class MechUserControl : MonoBehaviour
         }
 
         Vector3 screenPoint = Camera.main.WorldToScreenPoint(m_AimLocation);
-        m_Crosshair.transform.position = screenPoint;
+        if (m_Crosshair != null)
+        {
+            m_Crosshair.transform.position = screenPoint;
+        }
     }
 
     private void UpdateCameraParent()

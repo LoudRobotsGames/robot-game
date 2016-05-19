@@ -1,11 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-public class Health : MonoBehaviour
+public class Health : MonoBehaviour, IDamageable
 {
+    public int MaxHealth;
+    [SerializeField]
+    private int CurrentHealth;
 
-	// Use this for initialization
-	void Start()
+    public void TakeDamage(int damage)
+    {
+        CurrentHealth -= damage;
+    }
+
+    // Use this for initialization
+    void Start()
 	{
 
 	}
