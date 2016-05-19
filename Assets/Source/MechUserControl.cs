@@ -6,17 +6,10 @@ using UnityEngine.UI;
 
 public class MechUserControl : MonoBehaviour
 {
-    public enum ViewAndControlType
-    {
-        AimAtMouse,
-        TurnByMouse,
-    }
-    
     [SerializeField] private Transform m_Torso;
     [SerializeField] private Transform m_TiltPivot;
     [SerializeField] private Camera m_Camera;
     [Header("Input")]
-    [SerializeField] private ViewAndControlType m_ControlType = ViewAndControlType.AimAtMouse;
     public string m_VerticalAxisName = "Vertical";
     public string m_HorizontalAxisName = "Horizontal";
     public string m_AimAxisName = "Mouse X";
@@ -37,7 +30,7 @@ public class MechUserControl : MonoBehaviour
     private float m_CurrentTurnRate;
     private MechLocomotion m_MechLocomotion;
     private Transform m_Transform;
-    private bool m_CursorLockedInTurnMode = true;
+    private bool m_CursorLocked = true;
     private WeaponControl[] m_Weapons;
     private Vector3 m_AimLocation;
     private Quaternion m_TargetTorsoRotation;
@@ -62,10 +55,9 @@ public class MechUserControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            m_CursorLockedInTurnMode = !m_CursorLockedInTurnMode;
+            m_CursorLocked = !m_CursorLocked;
         }
         UpdateCursorLock();
-        UpdateCameraParent();
         UpdateThrottle();
         UpdateTurnRate();
 
@@ -130,31 +122,13 @@ public class MechUserControl : MonoBehaviour
             m_Weapons[i].AimAt(m_AimLocation);
         }
 
-        Vector3 screenPoint = Camera.main.WorldToScreenPoint(m_AimLocation);
-        if (m_Crosshair != null)
-        {
-            m_Crosshair.transform.position = screenPoint;
-        }
+        //Vector3 screenPoint = Camera.main.WorldToScreenPoint(m_AimLocation);
+        //if (m_Crosshair != null)
+        //{
+        //    m_Crosshair.transform.position = screenPoint;
+        //}
     }
-
-    private void UpdateCameraParent()
-    {
-        if (m_ControlType == ViewAndControlType.AimAtMouse)
-        {
-            if (m_Camera.transform.parent != transform)
-            {
-                m_Camera.transform.parent = transform;
-            }
-        }
-        else if (m_ControlType == ViewAndControlType.TurnByMouse)
-        {
-            if (m_Camera.transform.parent != m_Torso)
-            {
-                m_Camera.transform.parent = m_Torso;
-            }
-        }
-    }
-
+    
     private void FireWeapons()
     {
         for (int i = 0; i < m_Weapons.Length; ++i)
@@ -165,39 +139,24 @@ public class MechUserControl : MonoBehaviour
 
     private void TurnTorso()
     {
-        if (m_ControlType == ViewAndControlType.AimAtMouse)
-        {
-            Vector3 mousePoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f);
-            Vector3 worldPoint = m_Camera.ScreenToWorldPoint(mousePoint);
-            // Flatten the y for now
-            worldPoint.y = m_Torso.position.y;
+        float yRot = m_RotationSpeed * 0.1f * Input.GetAxis(m_AimAxisName);
 
-            // Use look at to compute the target rotation
-            //Quaternion q = m_Torso.rotation;
-            m_Torso.LookAt(worldPoint);
-            //Quaternion target = m_Torso.rotation;
-        }
-        else if (m_ControlType == ViewAndControlType.TurnByMouse)
-        {
-            float yRot = m_RotationSpeed * 0.1f * Input.GetAxis(m_AimAxisName);
+        m_TargetTorsoRotation *= Quaternion.Euler(0f, yRot, 0f);
 
-            m_TargetTorsoRotation *= Quaternion.Euler(0f, yRot, 0f);
+        // Clamp
+        Quaternion q = m_TargetTorsoRotation;
+        q.x /= q.w;
+        q.y /= q.w;
+        q.z /= q.w;
+        q.w = 1.0f;
 
-            // Clamp
-            Quaternion q = m_TargetTorsoRotation;
-            q.x /= q.w;
-            q.y /= q.w;
-            q.z /= q.w;
-            q.w = 1.0f;
+        float angleY = 2.0f * Mathf.Rad2Deg * Mathf.Atan(q.y);
+        angleY = Mathf.Clamp(angleY, -m_MaxHorizontalAngle, m_MaxHorizontalAngle);
+        q.y = Mathf.Tan(0.5f * Mathf.Deg2Rad * angleY);
+        m_TargetTorsoRotation = q;
 
-            float angleY = 2.0f * Mathf.Rad2Deg * Mathf.Atan(q.y);
-            angleY = Mathf.Clamp(angleY, -m_MaxHorizontalAngle, m_MaxHorizontalAngle);
-            q.y = Mathf.Tan(0.5f * Mathf.Deg2Rad * angleY);
-            m_TargetTorsoRotation = q;
-
-            m_Torso.localRotation = Quaternion.Slerp(m_Torso.localRotation, m_TargetTorsoRotation,
+        m_Torso.localRotation = Quaternion.Slerp(m_Torso.localRotation, m_TargetTorsoRotation,
                     m_RotationSmoothing * Time.deltaTime);
-        }
     }
 
     private void TiltTorso()
@@ -224,7 +183,7 @@ public class MechUserControl : MonoBehaviour
 
     private void UpdateCursorLock()
     {
-        if (m_CursorLockedInTurnMode && m_ControlType == ViewAndControlType.TurnByMouse)
+        if (m_CursorLocked)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;

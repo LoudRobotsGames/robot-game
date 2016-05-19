@@ -26,7 +26,7 @@ public class Mission : MonoBehaviour
         {
             if (m_EnemyAI[i] != null)
             {
-                m_EnemyAI[i].SetTarget(m_Player);
+                //m_EnemyAI[i].SetTarget(m_Player);
             }
         }
     }

@@ -373,7 +373,7 @@ GameObject:
   - 114: {fileID: 11420294}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1730,7 +1730,6 @@ MonoBehaviour:
   m_Torso: {fileID: 483504}
   m_TiltPivot: {fileID: 498290}
   m_Camera: {fileID: 2050100}
-  m_ControlType: 1
   m_VerticalAxisName: Vertical
   m_HorizontalAxisName: Horizontal
   m_AimAxisName: Mouse X
@@ -1891,7 +1890,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 153814}

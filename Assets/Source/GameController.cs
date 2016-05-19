@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
 
     public Camera m_LoadingCamera;
     public Text m_LoadingText;
+    public Image m_Crosshair;
     public float m_Timer = 0f;
 
     public Mission m_Mission;
@@ -28,6 +29,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         m_CurrentState = GameState.Loading;
+        m_Crosshair.enabled = false;
     }
 
     // Update is called once per frame
@@ -46,6 +48,8 @@ public class GameController : MonoBehaviour
                 break;
             case GameState.StartMission:
                 m_Mission.SpawnPlayer();
+                m_Crosshair.enabled = true;
+                m_Crosshair.CrossFadeAlpha(1, 1f, false);
                 m_LoadingCamera.enabled = false;
                 SetNextState(GameState.Playing);
                 break;

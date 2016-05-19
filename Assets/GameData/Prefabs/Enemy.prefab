@@ -105,6 +105,8 @@ GameObject:
   - 114: {fileID: 11431952}
   - 195: {fileID: 19520152}
   - 114: {fileID: 11416680}
+  - 114: {fileID: 11403100}
+  - 114: {fileID: 11454780}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1483,6 +1485,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11403100
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7f18dc91d784742ae62bba7a9d6630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_VisionRange: 50
+  m_VisionTagFilter: Player
 --- !u!114 &11416680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1494,7 +1509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fb7b7263c98d7343a7b50c06457a6a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  Target: {fileID: 0}
 --- !u!114 &11431952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1516,6 +1531,18 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1
   m_StickToGroundForce: 2
   m_GroundCheckDistance: 0.15
+--- !u!114 &11454780
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b45055afccc129e4faeff69ba2576e0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ThinkInterval: 0.5
 --- !u!137 &13700622
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
