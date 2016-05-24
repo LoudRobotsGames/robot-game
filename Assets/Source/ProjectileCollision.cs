@@ -9,16 +9,37 @@ public class ProjectileCollision : MonoBehaviour
     private Collision m_ActiveCollision;
     public Collision ActiveCollision { get { return m_ActiveCollision; } }
 
-    public void OnCollisionEnter(Collision collision)
+
+    private EffectSettings m_EffectSettings;
+
+    public void Start()
+    {
+        GetEffectSettingsComponent(this.transform);
+        if (m_EffectSettings != null) m_EffectSettings.CollisionEnter += effectSettings_CollisionEnter;
+    }
+
+    void effectSettings_CollisionEnter(object sender, CollisionInfo e)
     {
         if (OnCollision != null)
         {
             OnCollision(this, null);
-            IDamageable damageable = collision.collider.GetComponent<IDamageable>();
-            if (damageable != null)
-            {
-                damageable.TakeDamage(5);
-            }
+        }
+        
+        IDamageable damageable = e.Hit.collider.GetComponent<IDamageable>();
+        if (damageable != null)
+        {
+            damageable.TakeDamage(5, e.Hit.point, e.Hit.normal);
+        }
+    }
+
+    private void GetEffectSettingsComponent(Transform tr)
+    {
+        var parent = tr.parent;
+        if (parent != null)
+        {
+            m_EffectSettings = parent.GetComponentInChildren<EffectSettings>();
+            if (m_EffectSettings == null)
+                GetEffectSettingsComponent(parent.transform);
         }
     }
 }

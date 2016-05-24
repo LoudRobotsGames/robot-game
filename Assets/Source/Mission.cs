@@ -9,6 +9,7 @@ public class Mission : MonoBehaviour
 {
     public Transform m_PlayerStartPoint;
     public Transform[] m_EnemySpawnPoints;
+    public Transform[] m_EnemyPatrolPoints;
     public float m_EnemySpawnInterval = 1f;
 
     public GameObject m_PlayerPrefab;
@@ -22,13 +23,6 @@ public class Mission : MonoBehaviour
 
     public void Update()
     {
-        for (int i = 0; i < m_EnemyAI.Count; ++i)
-        {
-            if (m_EnemyAI[i] != null)
-            {
-                //m_EnemyAI[i].SetTarget(m_Player);
-            }
-        }
     }
 
     public void SpawnPlayer()
@@ -39,7 +33,6 @@ public class Mission : MonoBehaviour
         m_Player.position = m_PlayerStartPoint.position;
         m_Player.rotation = m_PlayerStartPoint.rotation;
         playerGO.name = "Player";
-
     }
 
     public void StartSpawningEnemies()
@@ -53,13 +46,13 @@ public class Mission : MonoBehaviour
         WaitForSeconds wait = new WaitForSeconds(m_EnemySpawnInterval);
         while (i < m_EnemySpawnPoints.Length)
         {
-            SpawnEnemy(m_EnemySpawnPoints[i]);
+            SpawnEnemy(m_EnemySpawnPoints[i], m_EnemyPatrolPoints[0].position);
             i++;
             yield return wait;
         }
     }
 
-    private void SpawnEnemy(Transform spawnPoint)
+    private void SpawnEnemy(Transform spawnPoint, Vector3 patrolPoint)
     {
         GameObject enemyGO = GameObject.Instantiate<GameObject>(m_EnemyPrefab);
 
@@ -68,6 +61,10 @@ public class Mission : MonoBehaviour
         enemy.rotation = spawnPoint.rotation;
         m_EnemyAI.Add(enemy.GetComponent<MechAIControl>());
         enemyGO.name = "Enemy";
+
+        AIBrain ai = enemy.GetComponent<AIBrain>();
+        ai.AIData.MoveTarget = patrolPoint;
+        ai.SetNextState(MoveToState.StaticState);
     }
 
     public bool IsMissionDone()

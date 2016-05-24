@@ -27,6 +27,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 401028}
   - 114: {fileID: 11495362}
+  - 114: {fileID: 11423092}
   m_Layer: 0
   m_Name: Impact
   m_TagString: Untagged
@@ -520,6 +521,17 @@ MonoBehaviour:
   FadeOutSpeed: 1
   FadeOutAfterCollision: 0
   UseHideStatus: 0
+--- !u!114 &11423092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57a99f22a6368264a94c6d3ea241d6ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11488310
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -23,6 +23,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 469712}
+  - 64: {fileID: 6444522}
   m_Layer: 0
   m_Name: Shoulders_lt_frame
   m_TagString: Untagged
@@ -106,7 +107,7 @@ GameObject:
   - 195: {fileID: 19520152}
   - 114: {fileID: 11416680}
   - 114: {fileID: 11403100}
-  - 114: {fileID: 11454780}
+  - 114: {fileID: 11463264}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -138,6 +139,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 439302}
   - 95: {fileID: 9506344}
+  - 65: {fileID: 6531296}
+  - 114: {fileID: 11473454}
   m_Layer: 0
   m_Name: Weapon_machinegun_lvl2
   m_TagString: Untagged
@@ -321,6 +324,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 499832}
+  - 64: {fileID: 6478152}
   m_Layer: 0
   m_Name: Cockpit_jet
   m_TagString: Untagged
@@ -612,6 +616,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 496340}
   - 95: {fileID: 9511664}
+  - 65: {fileID: 6597674}
+  - 114: {fileID: 11442662}
   m_Layer: 0
   m_Name: Weapon_machinegun_lvl5
   m_TagString: Untagged
@@ -1374,6 +1380,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108932}
   m_Mesh: {fileID: 4300000, guid: b4590b8467c70bd4c82d2daa6616c8cd, type: 3}
+--- !u!64 &6444522
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105426}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 4300010, guid: 4edb3af143c57264ba9f1b299f83a883, type: 3}
+--- !u!64 &6478152
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140382}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: b4590b8467c70bd4c82d2daa6616c8cd, type: 3}
 --- !u!65 &6505882
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1386,6 +1416,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6255466, y: 1.2402251, z: 0.60223806}
   m_Center: {x: -0.20991689, y: 0.24509288, z: 0.06371096}
+--- !u!65 &6531296
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119256}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.53398526, y: 0.8924036, z: 2.8557239}
+  m_Center: {x: -0.40098774, y: 0.012318224, z: 0.71036845}
 --- !u!65 &6532884
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1434,6 +1476,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.64697367, y: 1.5256529, z: 0.6178789}
   m_Center: {x: 0.20005392, y: -0.45242748, z: 0.043790795}
+--- !u!65 &6597674
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184940}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.53398526, y: 0.8924036, z: 2.8557239}
+  m_Center: {x: -0.40098774, y: 0.012318224, z: 0.71036845}
 --- !u!95 &9506344
 Animator:
   serializedVersion: 3
@@ -1531,7 +1585,20 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1
   m_StickToGroundForce: 2
   m_GroundCheckDistance: 0.15
---- !u!114 &11454780
+--- !u!114 &11442662
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c878ddd4e323cfd44abf8caab055e625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 10
+  CurrentHealth: 0
+--- !u!114 &11463264
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1539,10 +1606,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 116126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b45055afccc129e4faeff69ba2576e0c, type: 3}
+  m_Script: {fileID: 11500000, guid: 19ab9f8ca2e30c14cbef1adffee139aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ThinkInterval: 0.5
+  m_ThinkInterval: 0.1
+--- !u!114 &11473454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c878ddd4e323cfd44abf8caab055e625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 10
+  CurrentHealth: 0
 --- !u!137 &13700622
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

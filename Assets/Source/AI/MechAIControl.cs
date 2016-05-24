@@ -28,13 +28,10 @@ public class MechAIControl : MonoBehaviour
 
     private void Update()
     {
-        if (Target == null)
+        if (Target != null)
         {
-            Agent.Stop();
-            return;
+            Agent.SetDestination(Target.position);
         }
-
-        Agent.SetDestination(Target.position);
 
 		Vector3 worldDeltaPosition = Agent.nextPosition - m_Transform.position;
        
@@ -53,6 +50,12 @@ public class MechAIControl : MonoBehaviour
 			Agent.nextPosition = m_Transform.position + 0.9f * worldDeltaPosition;
     }
 
+    public bool MoveToTarget(Vector3 target)
+    {
+        this.Target = null;
+        return Agent.SetDestination(target);
+    }
+
     public void SetTarget(Transform target)
     {
         if (target != null)
@@ -66,7 +69,16 @@ public class MechAIControl : MonoBehaviour
                 Agent.ResetPath();
             }
         }
+        else
+        {
+            Agent.Stop();
+        }
         this.Target = target;
+    }
+
+    public void Stop()
+    {
+        Agent.Stop();
     }
 
     public void OnDrawGizmos()

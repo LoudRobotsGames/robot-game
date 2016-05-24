@@ -203,4 +203,8 @@ public class MechUserControl : MonoBehaviour
         Gizmos.DrawSphere(aim, 0.1f);
 
     }
+
+    public void Footstep(int side)
+    {
+    }
 }
