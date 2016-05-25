@@ -15,6 +15,17 @@ public class Explode : MonoBehaviour
         {
             return;
         }
+
+		TriggerExplosion( collision.contacts[ 0 ].point, collision.contacts[ 0 ].normal );
     }
+
+	public void TriggerExplosion(Vector3 point, Vector3 normal)
+	{
+		GameObject go = GameObject.Instantiate<GameObject>( m_Prefab );
+		go.name = "Explosion";
+		go.transform.position = point;
+		go.transform.rotation = Quaternion.LookRotation( normal );
+
+	}
 }
 

@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class MechSystem : MonoBehaviour, IDamageable
 {
-    public string m_Name;
     public Armor m_Armor;
     public DamageableStructure m_InternalStructure;
     public List<InternalSystem> m_InternalSystem;
+	public Explode m_ExplodeOnDestruction;
     
     public void Start()
     {
+		m_Armor.Reset();
+		m_InternalStructure.Reset();
     }
 
     public void TakeDamage(int damage, Vector3 hitPoint, Vector3 hitNormal)
@@ -30,6 +32,11 @@ public class MechSystem : MonoBehaviour, IDamageable
 
         // If any damage remaining, deal it to the internal structure
         m_InternalStructure.TakeDamage(internalDamage);
+
+		if( m_InternalStructure.m_CurrentHealth <= 0 && m_ExplodeOnDestruction != null)
+		{
+			m_ExplodeOnDestruction.TriggerExplosion( hitPoint, hitNormal );
+		}
     }
 
     #region local types
@@ -40,7 +47,7 @@ public class MechSystem : MonoBehaviour, IDamageable
         [HideInInspector]
         public int m_CurrentHealth;
 
-        public DamageableStructure()
+        public void Reset()
         {
             m_CurrentHealth = m_MaxHealth;
         }
