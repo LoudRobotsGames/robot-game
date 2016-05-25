@@ -36,6 +36,7 @@ public class MechSystem : MonoBehaviour, IDamageable
 		if( m_InternalStructure.m_CurrentHealth <= 0 && m_ExplodeOnDestruction != null)
 		{
 			m_ExplodeOnDestruction.TriggerExplosion( hitPoint, hitNormal );
+            gameObject.SetActive(false);
 		}
     }
 
