@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: c7699c20a720ec14a8da1c82995a44e8
+labels:
+- Guidance
+- Guided
+- Proportional
+- Navigation
+- Pro-Nav
+- Missile
+- Tail-Chase
+- Augmented
+timeCreated: 1442879504
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

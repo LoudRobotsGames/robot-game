@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: fb994233d6b8d694f9eb41fcf83cee58
+labels:
+- Augmented
+- Pro-Nav
+- Navigation
+- Missile
+- Guided
+- Guidance
+- Proportional
+timeCreated: 1445497408
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

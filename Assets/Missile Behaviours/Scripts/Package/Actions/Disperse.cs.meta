@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 55297e4c79e9f9b45a456250ce533425
+labels:
+- Navigation
+- Proportional
+- Missile
+- Rocket
+- Guidance
+- Augmented
+- Guided
+- Pro-Nav
+- Behaviours
+- Tail-Chase
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

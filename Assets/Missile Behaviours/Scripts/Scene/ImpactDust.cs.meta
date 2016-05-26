@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: beaff3f6ae9ea5f488244c3c2257d9e8
+timeCreated: 1438584574
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - dustPrefab: {fileID: 111872, guid: 00632fb4b2435a7439bc023f6b0930f5, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,5 +1,15 @@
 fileFormatVersion: 2
 guid: 921a3ff88856fe04ebc86b196fd8cc59
+labels:
+- Proportional
+- Navigation
+- Missile
+- Rocket
+- Guidance
+- Augmented
+- Guided
+- Pro-Nav
+- Behaviours
+- Tail-Chase
 NativeFormatImporter:
   userData: 
-  assetBundleName: 
