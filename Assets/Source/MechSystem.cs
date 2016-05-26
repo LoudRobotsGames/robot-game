@@ -5,10 +5,21 @@ using UnityEngine;
 
 public class MechSystem : MonoBehaviour, IDamageable
 {
+	public enum DestroyType
+	{
+		DeactivateGameObject,
+		DettachGameObject,
+		SwapGameObject,
+		RagdollGameObject,
+
+		COUNT
+	}
+
     public Armor m_Armor;
     public DamageableStructure m_InternalStructure;
     public List<InternalSystem> m_InternalSystem;
 	public Explode m_ExplodeOnDestruction;
+	public DestroyType m_DestroyType;
     
     public void Start()
     {
@@ -35,10 +46,45 @@ public class MechSystem : MonoBehaviour, IDamageable
 
 		if( m_InternalStructure.m_CurrentHealth <= 0 && m_ExplodeOnDestruction != null)
 		{
+			HandleDestruction();
 			m_ExplodeOnDestruction.TriggerExplosion( hitPoint, hitNormal );
-            gameObject.SetActive(false);
 		}
     }
+
+	private void HandleDestruction()
+	{
+		switch( m_DestroyType )
+		{
+			case DestroyType.DeactivateGameObject:
+				gameObject.SetActive( false );
+				break;
+			case DestroyType.DettachGameObject:
+				gameObject.transform.parent = null;
+				EnsureHasRigidBody( gameObject );
+				DisableAnimator( gameObject );
+				break;
+		}
+	}
+
+	private void DisableAnimator( GameObject go )
+	{
+		Animator anim = go.GetComponent<Animator>();
+		if( anim != null )
+		{
+			anim.applyRootMotion = false;
+			anim.enabled = false;
+		}
+	}
+
+	private void EnsureHasRigidBody(GameObject go)
+	{
+		Rigidbody rb = go.GetComponent<Rigidbody>();
+		if( rb == null )
+		{
+			rb = go.AddComponent<Rigidbody>();
+		}
+		rb.useGravity = true;
+	}
 
     #region local types
     [Serializable]
