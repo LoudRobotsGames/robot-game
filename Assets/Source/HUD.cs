@@ -62,12 +62,18 @@ public class HUD : MonoBehaviour
             m_EnemyPaperDoll.UpdateUI(enemy);
         }
         m_SelectedEnemy = enemy;
+        ShowEnemyHealth(enemy != null);
     }
 
     public void SetPlayerMech(GameObject player)
     {
         m_Player = player;
         m_PlayerPaperDoll.UpdateUI(player);
+    }
+
+    public void ShowEnemyHealth(bool showHide)
+    {
+        m_EnemyPaperDoll.gameObject.SetActive(showHide);
     }
 
     // Update is called once per frame

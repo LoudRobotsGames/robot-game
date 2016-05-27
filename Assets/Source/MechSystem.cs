@@ -85,6 +85,11 @@ public class MechSystem : MonoBehaviour, IDamageable
         return (armor + intStructure) / 2f;
     }
 
+    public bool IsDestroyed()
+    {
+        return AssessDamage() <= 0.0f;
+    }
+
     public void UpdateUI()
     {
         if (m_RootMechObject == HUD.Instance.SelectedEnemy)
@@ -120,6 +125,8 @@ public class MechSystem : MonoBehaviour, IDamageable
         {
             m_ChildSystem.HandleDestruction();
         }
+
+        Mission.CurrentMission.OnPartDestroyed(this);
 	}
 
 	private void DisableAnimator( GameObject go )

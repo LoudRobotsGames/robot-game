@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class Mission : MonoBehaviour
 {
+    public static Mission CurrentMission = null;
+
     public Transform m_PlayerStartPoint;
     public Transform[] m_EnemySpawnPoints;
     public Transform[] m_EnemyPatrolPoints;
@@ -20,9 +22,26 @@ public class Mission : MonoBehaviour
 
     private float m_Timer;
 
+    public void StartMission()
+    {
+        CurrentMission = this;
+    }
+
+    public void FinishMission()
+    {
+        if (CurrentMission == this)
+        {
+            CurrentMission = null;
+        }
+    }
 
     public void Update()
     {
+        // Only update if we are the active mission
+        if (CurrentMission != this)
+        {
+            return;
+        }
     }
 
     public void SpawnPlayer()
@@ -77,4 +96,39 @@ public class Mission : MonoBehaviour
         return false;
     }
 
+    #region Event driven callbacks... game logic notifies when things happen so we can evaluate goals
+    public void OnPartDestroyed(MechSystem system)
+    {
+        // If the system destroyed was the CenterTorso, then the whole mech is dead.
+        if (system.m_SystemLocation == MechSystem.SystemLocation.CenterTorso)
+        {
+            OnMechDestroyed(system.m_RootMechObject);
+        }
+        else if(system.m_SystemLocation == MechSystem.SystemLocation.LeftLeg || system.m_SystemLocation == MechSystem.SystemLocation.RightLeg)
+        {
+            MechSystem other = null;
+            if (system.m_SystemLocation == MechSystem.SystemLocation.LeftLeg)
+            {
+                other = MechHelper.GetPart(system.m_RootMechObject, MechSystem.SystemLocation.RightLeg);
+            }
+            else
+            {
+                other = MechHelper.GetPart(system.m_RootMechObject, MechSystem.SystemLocation.LeftLeg);
+            }
+            // If both legs are destroyed, then the mech is dead
+            if (other.IsDestroyed())
+            {
+                OnMechDestroyed(system.m_RootMechObject);
+            }
+        }
+    }
+
+    public void OnMechDestroyed(GameObject mech)
+    {
+        if (HUD.Instance.SelectedEnemy == mech)
+        {
+            HUD.Instance.ShowEnemyHealth(false);
+        }
+    }
+    #endregion
 }
