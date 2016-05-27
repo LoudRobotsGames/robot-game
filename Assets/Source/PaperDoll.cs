@@ -21,6 +21,10 @@ public class PaperDoll : MonoBehaviour
     private List<MechSystem> m_SystemList = new List<MechSystem>(9);
     public void UpdateUI(GameObject mech)
     {
+        m_LeftArm.enabled = false;
+        m_RightArm.enabled = false;
+        m_TopWeapon.enabled = false;
+
         m_SystemList.Clear();
         mech.transform.GetComponentsInChildren<MechSystem>(m_SystemList);
 
@@ -66,6 +70,7 @@ public class PaperDoll : MonoBehaviour
 
         if (image != null)
         {
+            image.enabled = true;
             image.CrossFadeColor(Color.Lerp(m_DamagedColor, m_HealthyColor, system.AssessDamage()), .75f, true, false);
         }
     }

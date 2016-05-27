@@ -24,7 +24,10 @@ public class ProjectileCollision : MonoBehaviour
         {
             OnCollision(this, null);
         }
-        
+
+        if (e.Hit.collider == null)
+            return;
+
         IDamageable damageable = e.Hit.collider.GetComponent<IDamageable>();
         if (damageable != null)
         {

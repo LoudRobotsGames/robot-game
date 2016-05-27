@@ -4,6 +4,8 @@ using System;
 
 public class WeaponControl : MonoBehaviour
 {
+    private const int SHOT_COUNT = 4;
+
     public enum ShotType
     {
         Projectile,
@@ -27,6 +29,8 @@ public class WeaponControl : MonoBehaviour
     [SerializeField]
     private ShotType m_ShotType;
     [SerializeField]
+    private float m_ShotInterval;
+    [SerializeField]
     private float m_MaxVerticalAngle = 10;
     [SerializeField]
     private float m_MaxHorizontalAngle = 5;
@@ -35,41 +39,77 @@ public class WeaponControl : MonoBehaviour
     [SerializeField]
     private string m_FireButtonName = "Fire1";
 
+    private float m_Timer = 0f;
+
     // Shot we will fire and its effect settings
-    private GameObject m_Shot;
-    private GameObject m_MuzzleFlash;
-    private EffectSettings m_EffectSettings;
+    private class WeaponShot
+    {
+        public GameObject Shot;
+        public GameObject MuzzleFlash;
+        public EffectSettings FXSettings;
+
+        public bool Active;
+        
+        public void DeactivateMuzzleFlash(object sender, EventArgs e)
+        {
+            MuzzleFlash.SetActive(false);
+            Active = false;
+        }
+    }
+    private WeaponShot[] m_ShotPool = new WeaponShot[SHOT_COUNT];
 
     // Use this for initialization
     void Start()
     {
-        m_Shot = GameObject.Instantiate<GameObject>(m_ShotPrefab);
-        m_EffectSettings = m_Shot.GetComponent<EffectSettings>();
-        m_EffectSettings.Target = m_ShotTarget.gameObject;
-        m_EffectSettings.EffectDeactivated += DeactivateMuzzleFlash;
+        for (int i = 0; i < SHOT_COUNT; ++i)
+        {
+            WeaponShot weaponShot = new WeaponShot();
+            GameObject shot = GameObject.Instantiate<GameObject>(m_ShotPrefab);
+            EffectSettings fxSettings = shot.GetComponent<EffectSettings>();
+            fxSettings.Target = m_ShotTarget.gameObject;
+            fxSettings.EffectDeactivated += weaponShot.DeactivateMuzzleFlash;
 
-        m_MuzzleFlash = GameObject.Instantiate<GameObject>(m_MuzzleFlashPrefab);
+            GameObject muzzleFlash = GameObject.Instantiate<GameObject>(m_MuzzleFlashPrefab);
 
-        m_Shot.SetActive(false);
-        m_MuzzleFlash.SetActive(false);
-        m_Shot.hideFlags = HideFlags.HideAndDontSave;
-        m_MuzzleFlash.hideFlags = HideFlags.HideAndDontSave;
-        m_MuzzleFlash.transform.parent = m_FirePoint;
-        m_MuzzleFlash.transform.localPosition = Vector3.zero;
+            shot.SetActive(false);
+            muzzleFlash.SetActive(false);
+            //shot.hideFlags = HideFlags.HideAndDontSave;
+            //muzzleFlash.hideFlags = HideFlags.HideAndDontSave;
+            muzzleFlash.transform.parent = m_FirePoint;
+            muzzleFlash.transform.localPosition = Vector3.zero;
+
+            weaponShot.Shot = shot;
+            weaponShot.MuzzleFlash = muzzleFlash;
+            weaponShot.FXSettings = fxSettings;
+            weaponShot.Active = false;
+            m_ShotPool[i] = weaponShot;
+        }
+
+        m_Timer = m_ShotInterval;
     }
-
-    private void DeactivateMuzzleFlash(object sender, EventArgs e)
-    {
-        m_MuzzleFlash.SetActive(false);
-    }
-
+    
     public void LateUpdate()
     {
+        if (m_Timer >= 0f)
+        {
+            m_Timer -= Time.deltaTime;
+        }
+    }
+
+    private WeaponShot GetFreeShot()
+    {
+        for (int i = 0; i < SHOT_COUNT; ++i)
+        {
+            if (m_ShotPool[i].Active == false)
+                return m_ShotPool[i];
+        }
+        return null;
     }
 
     public void AttemptFire(bool overrideInput = false)
     {
-        if (m_Shot.activeSelf)
+        WeaponShot ws = GetFreeShot();
+        if (ws == null)
         {
             return;
         }
@@ -80,14 +120,21 @@ public class WeaponControl : MonoBehaviour
             return;
         }
 
-        //m_Shot = GameObject.Instantiate<GameObject>(m_ShotPrefab);
-        m_EffectSettings = m_Shot.GetComponent<EffectSettings>();
-        m_EffectSettings.Target = m_ShotTarget.gameObject;
+        if (m_Timer > 0f)
+        {
+            return;
+        }
 
-        m_Shot.transform.position = m_FirePoint.position;
-        m_Shot.transform.rotation = m_FirePoint.rotation;
-        m_Shot.SetActive(true);
-        m_MuzzleFlash.SetActive(true);
+        // Adjust the timer
+        m_Timer += m_ShotInterval;
+
+        ws.Active = true;
+        ws.FXSettings.Target = m_ShotTarget.gameObject;
+
+        ws.Shot.transform.position = m_FirePoint.position;
+        ws.Shot.transform.rotation = m_FirePoint.rotation;
+        ws.Shot.SetActive(true);
+        ws.MuzzleFlash.SetActive(true);
     }
 
     internal void AimAt(Vector3 aimLocation)
