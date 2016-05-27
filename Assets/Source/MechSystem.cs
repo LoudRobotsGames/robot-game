@@ -5,8 +5,22 @@ using UnityEngine;
 
 public class MechSystem : MonoBehaviour, IDamageable
 {
+    public enum SystemLocation
+    {
+        LeftLeg,
+        RightLeg,
+        CenterTorso,
+        LeftTorso,
+        RightTorso,
+        LeftArm,
+        RightArm,
+        TopWeapon,
+        Head
+    }
+
 	public enum DestroyType
 	{
+        ExplodeAndNotify,
 		DeactivateGameObject,
 		DettachGameObject,
 		SwapGameObject,
@@ -15,16 +29,26 @@ public class MechSystem : MonoBehaviour, IDamageable
 		COUNT
 	}
 
+    public GameObject m_RootMechObject;
+    public SystemLocation m_SystemLocation;
+    public MechSystem m_ChildSystem;
+    public MechSystem m_ParentSystem;
     public Armor m_Armor;
     public DamageableStructure m_InternalStructure;
     public List<InternalSystem> m_InternalSystem;
 	public Explode m_ExplodeOnDestruction;
 	public DestroyType m_DestroyType;
-    
+
     public void Start()
     {
-		m_Armor.Reset();
-		m_InternalStructure.Reset();
+        ResetDamage();
+    }
+
+    public void ResetDamage()
+    {
+        m_Armor.Reset();
+        m_InternalStructure.Reset();
+        UpdateUI();
     }
 
     public void TakeDamage(int damage, Vector3 hitPoint, Vector3 hitNormal)
@@ -49,10 +73,37 @@ public class MechSystem : MonoBehaviour, IDamageable
 			HandleDestruction();
 			m_ExplodeOnDestruction.TriggerExplosion( hitPoint, hitNormal );
 		}
+
+        UpdateUI();
     }
 
-	private void HandleDestruction()
+    public float AssessDamage()
+    {
+        float armor = (float)m_Armor.m_CurrentHealth / (float)m_Armor.m_MaxHealth;
+        float intStructure = (float)m_InternalStructure.m_CurrentHealth / (float)m_InternalStructure.m_MaxHealth;
+
+        return (armor + intStructure) / 2f;
+    }
+
+    public void UpdateUI()
+    {
+        if (m_RootMechObject == HUD.Instance.SelectedEnemy)
+        {
+            HUD.Instance.EnemyHealth.UpdateUIFromSystem(this);
+        }
+        else if (m_RootMechObject == HUD.Instance.Player)
+        {
+            HUD.Instance.PlayerHealth.UpdateUIFromSystem(this);
+        }
+    }
+
+    private void HandleDestruction()
 	{
+        // Ensure the armor values are at zero and Update the UI
+        m_Armor.m_CurrentHealth = 0;
+        m_InternalStructure.m_CurrentHealth = 0;
+        UpdateUI();
+
 		switch( m_DestroyType )
 		{
 			case DestroyType.DeactivateGameObject:
@@ -64,6 +115,11 @@ public class MechSystem : MonoBehaviour, IDamageable
 				DisableAnimator( gameObject );
 				break;
 		}
+
+        if (m_ChildSystem != null)
+        {
+            m_ChildSystem.HandleDestruction();
+        }
 	}
 
 	private void DisableAnimator( GameObject go )
@@ -84,6 +140,7 @@ public class MechSystem : MonoBehaviour, IDamageable
 			rb = go.AddComponent<Rigidbody>();
 		}
 		rb.useGravity = true;
+        rb.mass = 10f;
 	}
 
     #region local types

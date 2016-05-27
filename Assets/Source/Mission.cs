@@ -33,6 +33,8 @@ public class Mission : MonoBehaviour
         m_Player.position = m_PlayerStartPoint.position;
         m_Player.rotation = m_PlayerStartPoint.rotation;
         playerGO.name = "Player";
+
+        HUD.Instance.SetPlayerMech(playerGO);
     }
 
     public void StartSpawningEnemies()
@@ -50,6 +52,7 @@ public class Mission : MonoBehaviour
             i++;
             yield return wait;
         }
+
     }
 
     private void SpawnEnemy(Transform spawnPoint, Vector3 patrolPoint)
@@ -65,6 +68,8 @@ public class Mission : MonoBehaviour
         AIBrain ai = enemy.GetComponent<AIBrain>();
         ai.AIData.MoveTarget = patrolPoint;
         ai.SetNextState(MoveToState.StaticState);
+
+        HUD.Instance.SelectEnemyMech(enemyGO);
     }
 
     public bool IsMissionDone()
