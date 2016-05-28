@@ -1,0 +1,163 @@
+fileFormatVersion: 2
+guid: a907b01776b4fe345a80f71825df45c1
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: End_Heel_L
+    100002: End_Heel_R
+    100004: End_Toe_L
+    100006: End_Toe_R
+    100008: Foot_L
+    100010: Foot_R
+    100012: Geom_Foot_L
+    100014: Geom_Foot_R
+    100016: Geom_Heel_L
+    100018: Geom_Heel_R
+    100020: Geom_Hip_L
+    100022: Geom_Hip_R
+    100024: Geom_Pelvis
+    100026: Geom_Shin_L
+    100028: Geom_Shin_R
+    100030: Geom_Toe_L
+    100032: Geom_Toe_R
+    100034: Heel_L
+    100036: Heel_R
+    100038: Hip_L
+    100040: Hip_R
+    100042: HIPS
+    100044: //RootNode
+    100046: Mount_top
+    100048: Pelvis
+    100050: Shin_L
+    100052: Shin_R
+    100054: Toe_L
+    100056: Toe_R
+    100058: Top
+    400000: End_Heel_L
+    400002: End_Heel_R
+    400004: End_Toe_L
+    400006: End_Toe_R
+    400008: Foot_L
+    400010: Foot_R
+    400012: Geom_Foot_L
+    400014: Geom_Foot_R
+    400016: Geom_Heel_L
+    400018: Geom_Heel_R
+    400020: Geom_Hip_L
+    400022: Geom_Hip_R
+    400024: Geom_Pelvis
+    400026: Geom_Shin_L
+    400028: Geom_Shin_R
+    400030: Geom_Toe_L
+    400032: Geom_Toe_R
+    400034: Heel_L
+    400036: Heel_R
+    400038: Hip_L
+    400040: Hip_R
+    400042: HIPS
+    400044: //RootNode
+    400046: Mount_top
+    400048: Pelvis
+    400050: Shin_L
+    400052: Shin_R
+    400054: Toe_L
+    400056: Toe_R
+    400058: Top
+    2300000: Geom_Foot_L
+    2300002: Geom_Foot_R
+    2300004: Geom_Heel_L
+    2300006: Geom_Heel_R
+    2300008: Geom_Hip_L
+    2300010: Geom_Hip_R
+    2300012: Geom_Pelvis
+    2300014: Geom_Shin_L
+    2300016: Geom_Shin_R
+    2300018: Geom_Toe_L
+    2300020: Geom_Toe_R
+    3300000: Geom_Foot_L
+    3300002: Geom_Foot_R
+    3300004: Geom_Heel_L
+    3300006: Geom_Heel_R
+    3300008: Geom_Hip_L
+    3300010: Geom_Hip_R
+    3300012: Geom_Pelvis
+    3300014: Geom_Shin_L
+    3300016: Geom_Shin_R
+    3300018: Geom_Toe_L
+    3300020: Geom_Toe_R
+    4300000: Geom_Toe_L
+    4300002: Geom_Foot_L
+    4300004: Geom_Heel_L
+    4300006: Geom_Shin_L
+    4300008: Geom_Hip_L
+    4300010: Geom_Toe_R
+    4300012: Geom_Foot_R
+    4300014: Geom_Heel_R
+    4300016: Geom_Shin_R
+    4300018: Geom_Hip_R
+    4300020: Geom_Pelvis
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: HIPS
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

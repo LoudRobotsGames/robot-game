@@ -1,0 +1,236 @@
+fileFormatVersion: 2
+guid: c061212dd681edd41904c564eb0f47ee
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: End_Heel_L
+    100002: End_Heel_R
+    100004: End_Toe_L
+    100006: End_Toe_R
+    100008: Foot_L
+    100010: Foot_R
+    100012: Heel_L
+    100014: Heel_R
+    100016: Hip_L
+    100018: Hip_R
+    100020: HIPS
+    100022: //RootNode
+    100024: Pelvis
+    100026: Shin_L
+    100028: Shin_R
+    100030: Toe_L
+    100032: Toe_R
+    100034: Top
+    400000: End_Heel_L
+    400002: End_Heel_R
+    400004: End_Toe_L
+    400006: End_Toe_R
+    400008: Foot_L
+    400010: Foot_R
+    400012: Heel_L
+    400014: Heel_R
+    400016: Hip_L
+    400018: Hip_R
+    400020: HIPS
+    400022: //RootNode
+    400024: Pelvis
+    400026: Shin_L
+    400028: Shin_R
+    400030: Toe_L
+    400032: Toe_R
+    400034: Top
+    7400000: Legs_Heavy_idle
+    7400002: Legs_Heavy_idle_simple
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.1
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Legs_Heavy_idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 300
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: HIPS
+        weight: 1
+      - path: HIPS/Pelvis
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Foot_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Foot_L/Toe_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Foot_L/Toe_L/End_Toe_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Heel_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Heel_L/End_Heel_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Foot_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Foot_R/Toe_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Foot_R/Toe_R/End_Toe_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Heel_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Heel_R/End_Heel_R
+        weight: 1
+      - path: HIPS/Pelvis/Top
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Legs_Heavy_idle_simple
+      takeName: Take 001
+      firstFrame: 170
+      lastFrame: 260
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: HIPS
+        weight: 1
+      - path: HIPS/Pelvis
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Foot_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Foot_L/Toe_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Foot_L/Toe_L/End_Toe_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Heel_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Heel_L/End_Heel_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Foot_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Foot_R/Toe_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Foot_R/Toe_R/End_Toe_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Heel_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Heel_R/End_Heel_R
+        weight: 1
+      - path: HIPS/Pelvis/Top
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: HIPS
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

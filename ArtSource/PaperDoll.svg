@@ -17,7 +17,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="PaperDoll.svg"
-   inkscape:export-filename="C:\Development\Unity\robot-game\ArtSource\PaperDoll_LL.png"
+   inkscape:export-filename="C:\Development\Unity\robot-game\ArtSource\PaperDoll_RAE.png"
    inkscape:export-xdpi="96.883522"
    inkscape:export-ydpi="96.883522">
   <defs
@@ -55,7 +55,7 @@
      inkscape:cx="211.5002"
      inkscape:cy="290.93613"
      inkscape:document-units="px"
-     inkscape:current-layer="layer14"
+     inkscape:current-layer="layer13"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
@@ -7822,19 +7822,23 @@ YII=
        id="PaperDoll_RAE"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccc"
-       inkscape:label="PaperDoll_RAE" />
+       inkscape:label="PaperDoll_RAE"
+       inkscape:export-xdpi="96.883522"
+       inkscape:export-ydpi="96.883522" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer14"
      inkscape:label="Left Arm Empty">
     <path
-       inkscape:label="PaperDoll_RAE"
+       inkscape:label="PaperDoll_LAE"
        sodipodi:nodetypes="ccccccc"
        inkscape:connector-curvature="0"
-       id="path4765"
+       id="PaperDoll_LAE"
        d="m 94.72025,82.275712 -51.071434,1.428572 -1.07142,75.357136 11.42857,0.35715 18.214276,30.35714 23.571438,-0.35714 z"
-       style="fill:#fffffd;fill-opacity:0.26627221;fill-rule:evenodd;stroke:#ffffff;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:#fffffd;fill-opacity:0.26627221;fill-rule:evenodd;stroke:#ffffff;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="96.883522"
+       inkscape:export-ydpi="96.883522" />
   </g>
   <g
      inkscape:groupmode="layer"
