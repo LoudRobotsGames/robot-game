@@ -14,6 +14,7 @@ public class MechUserControl : MonoBehaviour
     public string m_HorizontalAxisName = "Horizontal";
     public string m_AimAxisName = "Mouse X";
     public string m_TiltAxisName = "Mouse Y";
+    public string m_TargetButtonName = "Target Next";
     public float m_RotationSpeed = 1f;
     public float m_Acceleration = 1f;
     public float m_RotationSmoothing = 20f;
@@ -25,6 +26,9 @@ public class MechUserControl : MonoBehaviour
     [SerializeField]
     public Image m_Crosshair;
     public Transform m_AimPoint;
+
+    public VisionSensor m_Sensor;
+    private List<Transform> m_Contacts = new List<Transform>(64);
 
     private float m_CurrentSpeed;
     private float m_CurrentTurnRate;
@@ -57,6 +61,17 @@ public class MechUserControl : MonoBehaviour
         {
             m_CursorLocked = !m_CursorLocked;
         }
+
+        if (Input.GetButtonDown(m_TargetButtonName))
+        {
+            m_Sensor.GetContacts(ref m_Contacts);
+
+            if (m_Contacts.Count > 0)
+            {
+                HUD.Instance.SelectEnemyMech(m_Contacts[0].gameObject);
+            }
+        }
+
         UpdateCursorLock();
         UpdateThrottle();
         UpdateTurnRate();

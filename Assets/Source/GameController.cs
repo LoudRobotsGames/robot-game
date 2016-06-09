@@ -39,6 +39,7 @@ public class GameController : MonoBehaviour
         switch(m_CurrentState)
         {
             case GameState.Loading:
+                HUD.Instance.SelectEnemyMech(null);
                 m_LoadingText.text = "Loading Game";
                 if( m_Timer > 3f )
                 {

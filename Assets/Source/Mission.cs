@@ -87,8 +87,6 @@ public class Mission : MonoBehaviour
         AIBrain ai = enemy.GetComponent<AIBrain>();
         ai.AIData.MoveTarget = patrolPoint;
         ai.SetNextState(MoveToState.StaticState);
-
-        HUD.Instance.SelectEnemyMech(enemyGO);
     }
 
     public bool IsMissionDone()
