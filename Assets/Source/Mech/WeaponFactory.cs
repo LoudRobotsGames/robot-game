@@ -5,14 +5,14 @@ using System.Text;
 using UnityEditor;
 using UnityEngine;
 
-public class MechFactory
+public class WeaponFactory
 {
 #if UNITY_EDITOR
-    [UnityEditor.MenuItem("Assets/Create/Mech Blueprint")]
+    [UnityEditor.MenuItem("Assets/Create/Weapon Blueprint")]
     public static void Create()
     {
         Debug.Log("Create");
-        MechBlueprint blueprint = ScriptableObject.CreateInstance<MechBlueprint>();
+        WeaponBlueprint blueprint = ScriptableObject.CreateInstance<WeaponBlueprint>();
         string path = AssetDatabase.GetAssetPath(Selection.activeObject);
         if (path == "")
         {
