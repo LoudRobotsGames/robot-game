@@ -1,7 +1,5 @@
 fileFormatVersion: 2
-guid: eae55124736dfee4fbcfed2d0ae63818
-timeCreated: 1462514417
-licenseType: Free
+guid: eeac7d85402f4e74fb539dd8f32f4686
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -127,11 +125,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.01
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -145,11 +143,11 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 3
+    tangentImportMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

@@ -1,0 +1,13 @@
+## Version 1.3 (13-12-2015)
+- Put all Code Control components in a CodeControl namespace
+- Fixed monitor title warning message in Unity 5.1.2 and up
+- Fixed bug "Element already exists in dictionary" on model register
+
+## Version 1.2 (11-03-2015)
+- Made Code Control Unity 5 ready
+- Fixed coloring of labels for the light skin of Unity
+
+## Version 1.1 (09-03-2015)
+- Updated monitor help url so it targets the official Code Control website
+
+## Initial Version 1.0 (22-02-2015)

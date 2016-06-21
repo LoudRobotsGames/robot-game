@@ -1,0 +1,125 @@
+fileFormatVersion: 2
+guid: 6925aed3354cfd64086418fca956e67e
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Engine_L
+    100002: Engine_R
+    100004: Exhaust_Bottom
+    100006: Exhaust_Bottom_L
+    100008: Exhaust_Bottom_Main
+    100010: Exhaust_Bottom_R
+    100012: Exhaust_Main_L
+    100014: Exhaust_Main_R
+    100016: Geom_Engine_L
+    100018: Geom_Engine_R
+    100020: Geom_Jet_Lvl4
+    100022: Mount_Cockpit
+    100024: Mount_Missile_L_1
+    100026: Mount_Missile_L_2
+    100028: Mount_Missile_L_3
+    100030: Mount_Missile_R_1
+    100032: Mount_Missile_R_2
+    100034: Mount_Missile_R_3
+    100036: Mount_Missiles_L
+    100038: Mount_Missiles_R
+    100040: Mount_Weapon_L
+    100042: Mount_Weapon_R
+    100044: //RootNode
+    400000: Engine_L
+    400002: Engine_R
+    400004: Exhaust_Bottom
+    400006: Exhaust_Bottom_L
+    400008: Exhaust_Bottom_Main
+    400010: Exhaust_Bottom_R
+    400012: Exhaust_Main_L
+    400014: Exhaust_Main_R
+    400016: Geom_Engine_L
+    400018: Geom_Engine_R
+    400020: Geom_Jet_Lvl4
+    400022: Mount_Cockpit
+    400024: Mount_Missile_L_1
+    400026: Mount_Missile_L_2
+    400028: Mount_Missile_L_3
+    400030: Mount_Missile_R_1
+    400032: Mount_Missile_R_2
+    400034: Mount_Missile_R_3
+    400036: Mount_Missiles_L
+    400038: Mount_Missiles_R
+    400040: Mount_Weapon_L
+    400042: Mount_Weapon_R
+    400044: //RootNode
+    2300000: Geom_Engine_L
+    2300002: Geom_Engine_R
+    2300004: Geom_Jet_Lvl4
+    3300000: Geom_Engine_L
+    3300002: Geom_Engine_R
+    3300004: Geom_Jet_Lvl4
+    4300000: Geom_Engine_R
+    4300002: Geom_Engine_L
+    4300004: Geom_Jet_Lvl4
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

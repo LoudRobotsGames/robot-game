@@ -41,7 +41,7 @@ ModelImporter:
     400030: Toe_L
     400032: Toe_R
     400034: Top
-    7400000: Take 001
+    7400000: Legs_lt_walk_turn_70deg_R
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -63,7 +63,71 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Legs_lt_walk_turn_70deg_R
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 33
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: HIPS
+        weight: 1
+      - path: HIPS/Pelvis
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Foot_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Foot_L/Heel_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Foot_L/Heel_L/End_Heel_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Foot_L/Toe_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_L/Shin_L/Foot_L/Toe_L/End_Toe_L
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Foot_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Foot_R/Heel_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Foot_R/Heel_R/End_Heel_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Foot_R/Toe_R
+        weight: 1
+      - path: HIPS/Pelvis/Hip_R/Shin_R/Foot_R/Toe_R/End_Toe_R
+        weight: 1
+      - path: HIPS/Pelvis/Top
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
     isReadable: 1
   meshes:
     lODScreenPercentages: []

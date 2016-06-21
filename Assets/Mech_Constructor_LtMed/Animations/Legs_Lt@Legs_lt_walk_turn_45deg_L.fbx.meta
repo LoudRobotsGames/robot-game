@@ -1,7 +1,5 @@
 fileFormatVersion: 2
-guid: 801f0fb483733cd4188b6edc3903aa83
-timeCreated: 1462514416
-licenseType: Free
+guid: 0512c431d04f91243b11f44b03e24449
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -127,11 +125,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.01
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -145,11 +143,11 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 3
+    tangentImportMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -164,8 +162,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: HIPS
     hasTranslationDoF: 0
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: bfc91b249c1cb294a9d275d9c04405ee,
-    type: 3}
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   humanoidOversampling: 1
   additionalBone: 0

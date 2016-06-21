@@ -89,9 +89,17 @@ New animations added:
 - Fall
 
 
-Version 1.4
+Version 1.4 (January 2016)
 
 Root motion finally fixed (had to add an additional parent bone to all the legs and animations).
 Walk and run animation tweaked a bit.
 Turn on place animation added.
 Added HalfShoulder parts (can be very useful with the Spiders and Tanks pack).
+
+
+Version 1.5 (May 2016)
+
+New animations added:
+- Turning while walking
+- Turning while running
+- Faster turning on place
