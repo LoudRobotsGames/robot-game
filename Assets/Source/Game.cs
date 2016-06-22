@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class GameController : MonoBehaviour
+public class Game : MonoBehaviour
 {
     public enum GameState
     {
