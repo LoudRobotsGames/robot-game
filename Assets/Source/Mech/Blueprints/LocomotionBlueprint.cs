@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using UnityEngine;
 
-namespace Assets.Source.Mech
+public class LocomotionBlueprint : ScriptableObject
 {
-    class LocomotionBlueprint
-    {
-    }
+    public LocomotionType Type;
+    public string PathToTopMount;
+    public int Internal;
+    public int Armor;
+    public GameObject Model;
 }

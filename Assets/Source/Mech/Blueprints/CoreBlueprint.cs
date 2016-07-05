@@ -5,12 +5,10 @@ using UnityEngine;
 
 public class CoreBlueprint : ScriptableObject
 {
-    public int CenterTorsoArmor;
-    public int CenterTorsoInternal;
-    public int LeftTorsoArmor;
-    public int LeftTorsoInternal;
-    public int RightTorsoArmor;
-    public int RightTorsoInternal;
-    public int HeadArmor;
-    public int HeadInternal;
+    public int Armor;
+    public int Internal;
+    public string LeftWeaponMount;
+    public string RightWeaponMount;
+    public string TopWeaponMount;
+    public GameObject Model;
 }

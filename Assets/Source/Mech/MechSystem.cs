@@ -92,13 +92,19 @@ public class MechSystem : MonoBehaviour, IDamageable
 
     public void UpdateUI()
     {
-        if (m_RootMechObject == HUD.Instance.SelectedEnemy)
+        HUD hud = HUD.Instance;
+        if(hud == null)
         {
-            HUD.Instance.EnemyHealth.UpdateUIFromSystem(this);
+            return;
         }
-        else if (m_RootMechObject == HUD.Instance.Player)
+
+        if (m_RootMechObject == hud.SelectedEnemy)
         {
-            HUD.Instance.PlayerHealth.UpdateUIFromSystem(this);
+            hud.EnemyHealth.UpdateUIFromSystem(this);
+        }
+        else if (m_RootMechObject == hud.Player)
+        {
+            hud.PlayerHealth.UpdateUIFromSystem(this);
         }
     }
 

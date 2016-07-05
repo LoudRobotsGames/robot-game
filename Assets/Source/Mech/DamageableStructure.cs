@@ -10,6 +10,18 @@ public class DamageableStructure
     [HideInInspector]
     public int m_CurrentHealth;
 
+    public DamageableStructure()
+    {
+        m_MaxHealth = 10;
+        m_CurrentHealth = 10;
+    }
+
+    public DamageableStructure(int max)
+    {
+        m_MaxHealth = max;
+        m_CurrentHealth = max;
+    }
+
     public void Reset()
     {
         m_CurrentHealth = m_MaxHealth;

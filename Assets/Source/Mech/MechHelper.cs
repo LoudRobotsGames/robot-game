@@ -21,4 +21,36 @@ public class MechHelper
         }
         return null;
     }
+
+    public static GameObject CreateMech(MechBlueprint blueprint)
+    {
+        GameObject mech = new GameObject(blueprint.name);
+        GameObject locomotion = GameObject.Instantiate<GameObject>(blueprint.Locomotion.Model);
+        locomotion.transform.SetParent(mech.transform, false);
+
+        Transform mount = locomotion.transform.FindChild(blueprint.Locomotion.PathToTopMount);
+        GameObject core = GameObject.Instantiate<GameObject>(blueprint.Core.Model);
+        core.transform.SetParent(mount, false);
+        MechSystem system = core.AddComponent<MechSystem>();
+        system.m_Armor = new Armor(blueprint.Core.Armor);
+        system.m_InternalStructure = new DamageableStructure(blueprint.Core.Internal);
+
+        mount = core.transform.FindChild(blueprint.Core.LeftWeaponMount);
+        GameObject weapon = GameObject.Instantiate<GameObject>(blueprint.LeftWeapon.Model);
+        weapon.transform.SetParent(mount, false);
+        Animator anim = weapon.GetComponent<Animator>();
+        anim.Stop();
+
+        mount = core.transform.FindChild(blueprint.Core.RightWeaponMount);
+        weapon = GameObject.Instantiate<GameObject>(blueprint.RightWeapon.Model);
+        weapon.transform.SetParent(mount, false);
+        anim = weapon.GetComponent<Animator>();
+        anim.Stop();
+
+        MechComputer computer = mech.AddComponent<MechComputer>();
+        computer.m_MechRoot = mech;
+        computer.InitComputer();
+
+        return mech;
+    }
 }
