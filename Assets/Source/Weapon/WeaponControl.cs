@@ -6,12 +6,6 @@ public class WeaponControl : MonoBehaviour
 {
     private const int SHOT_COUNT = 4;
 
-    public enum ShotType
-    {
-        Projectile,
-        Laser
-    }
-
     [SerializeField]
     private Transform m_Mount;
     [SerializeField]
@@ -57,6 +51,12 @@ public class WeaponControl : MonoBehaviour
         }
     }
     private WeaponShot[] m_ShotPool = new WeaponShot[SHOT_COUNT];
+
+    public void ConstructFromBlueprint(WeaponBlueprint blueprint)
+    {
+        m_ShotType = blueprint.ShotType;
+        m_MaxVerticalAngle = blueprint.MaxVerticalAngle;
+    }
 
     // Use this for initialization
     void Start()

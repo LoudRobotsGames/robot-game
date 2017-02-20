@@ -32,8 +32,13 @@ public class MechHelper
         GameObject core = GameObject.Instantiate<GameObject>(blueprint.Core.Model);
         core.transform.SetParent(mount, false);
         MechSystem system = core.AddComponent<MechSystem>();
-        system.m_Armor = new Armor(blueprint.Core.Armor);
-        system.m_InternalStructure = new DamageableStructure(blueprint.Core.Internal);
+        system.ConstructFromBlueprint(blueprint.Core);
+
+        if( blueprint.Core.Explosion != null )
+        {
+            SetupExplodeComponent(system, blueprint.Core.Explosion);
+            system.m_DestroyType = MechSystem.DestroyType.ExplodeAndNotify;
+        }
 
         mount = core.transform.FindChild(blueprint.Core.LeftWeaponMount);
         GameObject weapon = GameObject.Instantiate<GameObject>(blueprint.LeftWeapon.Model);
@@ -52,5 +57,14 @@ public class MechHelper
         computer.InitComputer();
 
         return mech;
+    }
+
+    private static void SetupExplodeComponent(MechSystem system, GameObject prefab)
+    {
+        Explode explode = system.gameObject.AddComponent<Explode>();
+
+        explode.m_Prefab = prefab;
+
+        system.m_ExplodeOnDestruction = explode;
     }
 }

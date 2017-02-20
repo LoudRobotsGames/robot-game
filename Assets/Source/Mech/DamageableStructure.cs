@@ -7,7 +7,7 @@ using UnityEngine;
 public class DamageableStructure
 {
     public int m_MaxHealth;
-    [HideInInspector]
+    //[HideInInspector]
     public int m_CurrentHealth;
 
     public DamageableStructure()

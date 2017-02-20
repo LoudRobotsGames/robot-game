@@ -35,9 +35,27 @@ public class MechSystem : MonoBehaviour, IDamageable
     public MechSystem m_ParentSystem;
     public Armor m_Armor;
     public DamageableStructure m_InternalStructure;
-    public List<InternalSystem> m_InternalSystem;
+    public List<ResourceCount> m_ResourceCounts;
 	public Explode m_ExplodeOnDestruction;
 	public DestroyType m_DestroyType;
+    
+    private int m_ResourceStep;
+
+    public void ConstructFromBlueprint(BaseBlueprint blueprint)
+    {
+        m_Armor = new Armor(blueprint.Armor);
+        m_InternalStructure = new DamageableStructure(blueprint.Internal);
+
+        int count = blueprint.ResourceCosts.Count;
+        m_ResourceCounts = new List<ResourceCount>(count);
+        int resourceTotal = 0;
+        for (int i = 0; i < count; ++i)
+        {
+            m_ResourceCounts.Add( new ResourceCount(blueprint.ResourceCosts[i]) );
+            resourceTotal += blueprint.ResourceCosts[i].Count;
+        }
+        m_ResourceStep = Mathf.RoundToInt((float)resourceTotal / (float)m_InternalStructure.m_MaxHealth);
+    }
 
     public void Start()
     {
@@ -62,7 +80,7 @@ public class MechSystem : MonoBehaviour, IDamageable
         // If any damage done to internals, it may damage an internal system
         if (internalDamage > 0)
         {
-
+            ReduceResources(internalDamage);
         }
 
         // If any damage remaining, deal it to the internal structure
@@ -75,6 +93,21 @@ public class MechSystem : MonoBehaviour, IDamageable
 		}
 
         UpdateUI();
+    }
+
+    private void ReduceResources(int internalDamage)
+    {
+        internalDamage *= m_ResourceStep;
+        for (int i = 0; i < m_ResourceCounts.Count; ++i)
+        {
+            int amount = Mathf.Min(m_ResourceCounts[i].Count, internalDamage);
+            m_ResourceCounts[i].Count -= amount;
+            internalDamage -= amount;
+            if(internalDamage <= 0)
+            {
+                break;
+            }
+        }
     }
 
     public float AssessDamage()
@@ -132,7 +165,10 @@ public class MechSystem : MonoBehaviour, IDamageable
             m_ChildSystem.HandleDestruction();
         }
 
-        Mission.CurrentMission.OnPartDestroyed(this);
+        if (Mission.CurrentMission != null)
+        {
+            Mission.CurrentMission.OnPartDestroyed(this);
+        }
 	}
 
 	private void DisableAnimator( GameObject go )

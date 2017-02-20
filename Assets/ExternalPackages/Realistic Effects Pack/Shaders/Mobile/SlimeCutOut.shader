@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
+
 Shader "Effects/Mobile/SlimeCutOut" {
 Properties {
         _Color ("Main Color", Color) = (1,1,1,1)
@@ -84,7 +86,7 @@ Category {
 
 				float3 binormal = cross( v.normal, v.tangent.xyz ) * v.tangent.w;
 				float3x3 rotation = float3x3( v.tangent.xyz, binormal, v.normal );
-				o.normalDir = normalize(mul(half4(v.normal, 0.0), _World2Object).xyz);
+				o.normalDir = normalize(mul(half4(v.normal, 0.0), unity_WorldToObject).xyz);
                 o.tangentSpaceLightDir = mul(rotation, normalize(ObjSpaceViewDir(v.vertex)));
 
 				return o;
