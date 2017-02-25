@@ -41,7 +41,7 @@ public class MechSystem : MonoBehaviour, IDamageable
     
     private int m_ResourceStep;
 
-    public void ConstructFromBlueprint(BaseBlueprint blueprint)
+    public void SetupCommonState(BaseBlueprint blueprint)
     {
         m_Armor = new Armor(blueprint.Armor);
         m_InternalStructure = new DamageableStructure(blueprint.Internal);
@@ -51,7 +51,7 @@ public class MechSystem : MonoBehaviour, IDamageable
         int resourceTotal = 0;
         for (int i = 0; i < count; ++i)
         {
-            m_ResourceCounts.Add( new ResourceCount(blueprint.ResourceCosts[i]) );
+            m_ResourceCounts.Add(new ResourceCount(blueprint.ResourceCosts[i]));
             resourceTotal += blueprint.ResourceCosts[i].Count;
         }
         m_ResourceStep = Mathf.RoundToInt((float)resourceTotal / (float)m_InternalStructure.m_MaxHealth);

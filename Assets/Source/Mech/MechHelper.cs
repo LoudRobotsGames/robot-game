@@ -24,21 +24,18 @@ public class MechHelper
 
     public static GameObject CreateMech(MechBlueprint blueprint)
     {
-        GameObject mech = new GameObject(blueprint.name);
-        GameObject locomotion = GameObject.Instantiate<GameObject>(blueprint.Locomotion.Model);
-        locomotion.transform.SetParent(mech.transform, false);
+        // Root mech object
+        GameObject mech = GameObject.Instantiate<GameObject>(blueprint.Locomotion.Model);
+        mech.name = blueprint.name;
+        Transform mount = mech.transform.FindChild(blueprint.Locomotion.PathToTopMount);
 
-        Transform mount = locomotion.transform.FindChild(blueprint.Locomotion.PathToTopMount);
+        // Core system, attached to top mount on locomotion
         GameObject core = GameObject.Instantiate<GameObject>(blueprint.Core.Model);
+        core.name = blueprint.Core.Model.name;
         core.transform.SetParent(mount, false);
-        MechSystem system = core.AddComponent<MechSystem>();
-        system.ConstructFromBlueprint(blueprint.Core);
 
-        if( blueprint.Core.Explosion != null )
-        {
-            SetupExplodeComponent(system, blueprint.Core.Explosion);
-            system.m_DestroyType = MechSystem.DestroyType.ExplodeAndNotify;
-        }
+        MechSystem system = core.AddComponent<MechSystem>();
+        blueprint.Core.InitializeSystem(system);    
 
         mount = core.transform.FindChild(blueprint.Core.LeftWeaponMount);
         GameObject weapon = GameObject.Instantiate<GameObject>(blueprint.LeftWeapon.Model);
@@ -59,7 +56,7 @@ public class MechHelper
         return mech;
     }
 
-    private static void SetupExplodeComponent(MechSystem system, GameObject prefab)
+    public static void SetupExplodeComponent(MechSystem system, GameObject prefab)
     {
         Explode explode = system.gameObject.AddComponent<Explode>();
 

@@ -272,7 +272,7 @@ namespace NodeCanvas.Editor{
 				return;
 			}
 			
-			pan = Vector2.SmoothDamp(pan, smooth, ref _panVelocity, Application.isPlaying? 0.05f : 0.0001f);
+			//pan = Vector2.SmoothDamp(pan, smooth, ref _panVelocity, Application.isPlaying? 0.05f : 0.0001f);
 			Repaint();
 		}
 

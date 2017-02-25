@@ -6,7 +6,7 @@ namespace NodeCanvas.Tasks.Actions{
 
 	[Category("Movement")]
 	[Description("Makes the agent wander randomly within the navigation map")]
-	public class Wander : ActionTask<NavMeshAgent> {
+	public class Wander : ActionTask<UnityEngine.AI.NavMeshAgent> {
 
 		public BBParameter<float> speed = 4;
 		public BBParameter<float> stoppingDistance = 0.1f;

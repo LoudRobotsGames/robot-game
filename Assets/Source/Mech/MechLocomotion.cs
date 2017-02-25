@@ -6,16 +6,16 @@ using System;
 public class MechLocomotion : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] private bool m_ExtraRotationAtRun;
-	[SerializeField] float m_MovingTurnSpeed = 360;
-	[SerializeField] float m_StationaryTurnSpeed = 180;
-    [SerializeField] private CharacterController m_CharController;
-    [SerializeField] private float m_JumpPower = 12f;
-    [SerializeField] private float m_GravityMultiplier = 2f;
-    [SerializeField] private float m_AnimSpeedMultiplier = 1f;
-    [SerializeField] private float m_MoveSpeedMultiplier = 1f;
-    [SerializeField] private float m_StickToGroundForce;
-	[SerializeField] float m_GroundCheckDistance = 0.1f;
+    public bool m_ExtraRotationAtRun;
+	public float m_MovingTurnSpeed = 360;
+    public float m_StationaryTurnSpeed = 180;
+    public CharacterController m_CharController;
+    public float m_JumpPower = 12f;
+    public float m_GravityMultiplier = 2f;
+    public float m_AnimSpeedMultiplier = 1f;
+    public float m_MoveSpeedMultiplier = 1f;
+    public float m_StickToGroundForce;
+    public float m_GroundCheckDistance = 0.1f;
 
     #region Animator related fields
     private Animator m_Animator;

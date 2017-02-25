@@ -14,10 +14,10 @@ namespace NodeCanvas.Tasks.Actions{
 		[BlackboardOnly]
 		public BBParameter<Vector3> saveFoundPosition;
 
-		private NavMeshHit hit;
+		private UnityEngine.AI.NavMeshHit hit;
 
 		protected override void OnExecute(){
-			if (NavMesh.FindClosestEdge(targetPosition.value, out hit, -1)){
+			if (UnityEngine.AI.NavMesh.FindClosestEdge(targetPosition.value, out hit, -1)){
 				saveFoundPosition.value = hit.position;
 				EndAction(true);
 			}

@@ -4,10 +4,10 @@ using System.Text;
 using UnityEngine;
 
 [RequireComponent(typeof(MechLocomotion))]
-[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))]
 public class MechAIControl : MonoBehaviour
 { 
-    public NavMeshAgent Agent { get; private set; }             // the navmesh agent required for the path finding
+    public UnityEngine.AI.NavMeshAgent Agent { get; private set; }             // the navmesh agent required for the path finding
     public MechLocomotion Character { get; private set; } // the character we are controlling
     public Transform Target;                                    // target to aim for
 
@@ -18,7 +18,7 @@ public class MechAIControl : MonoBehaviour
     private void Start()
     {
         // get the components on the object we need ( should not be null due to require component so no need to check )
-        Agent = GetComponentInChildren<NavMeshAgent>();
+        Agent = GetComponentInChildren<UnityEngine.AI.NavMeshAgent>();
         Character = GetComponent<MechLocomotion>();
 
 	    Agent.updatePosition = false;

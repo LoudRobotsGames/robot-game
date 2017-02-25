@@ -33,5 +33,9 @@ MonoBehaviour:
   LeftWeaponMount: Mount_Weapon_L
   RightWeaponMount: Mount_Weapon_R
   TopWeaponMount: Mount_Weapon_Top
+  RotatorJoint: Mount_top
+  TiltJoint: Core_Jet_Mk1
+  CockpitAimPoint: {x: 0, y: 0.362, z: 1.233}
+  CockpitCameraOffset: {x: 0, y: 0.009, z: -0.503}
   Model: {fileID: 191330, guid: e7423695545d3e544bfd04fd818329ee, type: 2}
   Explosion: {fileID: 100010, guid: 6ae5a4e022a6fe341931ac7989866815, type: 2}

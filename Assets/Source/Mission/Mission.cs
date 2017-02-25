@@ -15,6 +15,7 @@ public class Mission : MonoBehaviour
     public float m_EnemySpawnInterval = 1f;
 
     public GameObject m_PlayerPrefab;
+    public MechBlueprint m_PlayerMech;
     public GameObject m_EnemyPrefab;
 
     public Transform m_Player;
@@ -46,7 +47,35 @@ public class Mission : MonoBehaviour
 
     public void SpawnPlayer()
     {
-        GameObject playerGO = GameObject.Instantiate<GameObject>(m_PlayerPrefab);
+        //GameObject playerGO = GameObject.Instantiate<GameObject>(m_PlayerPrefab);
+        GameObject playerGO = MechHelper.CreateMech(m_PlayerMech);
+        playerGO.tag = "Player";
+
+        MechUserControl userControl = playerGO.AddComponent<MechUserControl>();
+        MechSystem centerTorso = MechHelper.GetPart(playerGO, MechSystem.SystemLocation.CenterTorso);
+        userControl.Torso = playerGO.transform.FindDeepChild(m_PlayerMech.Core.RotatorJoint);
+        userControl.TiltPivot = playerGO.transform.FindDeepChild(m_PlayerMech.Core.TiltJoint);
+        userControl.m_RotationSpeed = 30;
+        userControl.m_MinVerticalAngle = -6f;
+        userControl.m_MaxVerticalAngle = 8f;
+        userControl.m_MaxHorizontalAngle = 75f;
+
+        // Set up camera and aim point
+        Transform aimPoint = new GameObject("AimPoint").GetComponent<Transform>();
+        aimPoint.SetParent(centerTorso.transform, false);
+        aimPoint.localPosition = m_PlayerMech.Core.CockpitAimPoint;
+        Transform camPoint = new GameObject("MainCamera").GetComponent<Transform>();
+        camPoint.SetParent(aimPoint, false);
+        Camera cockpitCamera = camPoint.gameObject.AddComponent<Camera>();
+        cockpitCamera.transform.localPosition = m_PlayerMech.Core.CockpitCameraOffset;
+        cockpitCamera.nearClipPlane = 0.5f;
+        // Register them
+        userControl.CockpitCamera = cockpitCamera;
+        userControl.m_AimPoint = aimPoint;
+
+        VisionSensor vision = playerGO.AddComponent<VisionSensor>();
+        vision.VisionTagFiler = "Enemy";
+        userControl.m_Sensor = vision;
 
         m_Player = playerGO.GetComponent<Transform>();
         m_Player.position = m_PlayerStartPoint.position;

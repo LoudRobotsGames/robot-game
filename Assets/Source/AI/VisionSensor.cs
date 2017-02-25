@@ -18,6 +18,16 @@ public class VisionSensor : MonoBehaviour, ISensor
         m_Transform = transform;
     }
 
+    public string VisionTagFiler {
+        get { return m_VisionTagFilter; }
+        set { m_VisionTagFilter = value; }
+    }
+
+    public float VisionRange {
+        get { return m_VisionRange; }
+        set { m_VisionRange = value; }
+    }
+
     public void GetContacts(ref List<Transform> contacts)
     {
         if (contacts == null)

@@ -6,7 +6,7 @@ namespace NodeCanvas.Tasks.Actions{
 
 	[Category("Movement")]
 	[Description("Flees away from the target")]
-	public class Flee : ActionTask<NavMeshAgent> {
+	public class Flee : ActionTask<UnityEngine.AI.NavMeshAgent> {
 
 		[RequiredField]
 		public BBParameter<GameObject> target;

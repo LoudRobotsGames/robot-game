@@ -7,7 +7,7 @@ namespace NodeCanvas.Tasks.Actions{
 
 	[Name("Move To Target")]
 	[Category("Movement")]
-	public class MoveToGameObject : ActionTask<NavMeshAgent> {
+	public class MoveToGameObject : ActionTask<UnityEngine.AI.NavMeshAgent> {
 
 		[RequiredField]
 		public BBParameter<GameObject> target;

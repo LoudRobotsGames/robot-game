@@ -7,7 +7,7 @@ namespace NodeCanvas.Tasks.Actions{
 
 	[Name("Move To Target Position")]
 	[Category("Movement")]
-	public class MoveToPosition : ActionTask<NavMeshAgent> {
+	public class MoveToPosition : ActionTask<UnityEngine.AI.NavMeshAgent> {
 
 		public BBParameter<Vector3> targetPosition;
 		public BBParameter<float> speed = 3;

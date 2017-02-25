@@ -8,7 +8,7 @@ namespace NodeCanvas.Tasks.Actions{
 
 	[Category("Movement")]
 	[Description("Move randomly between various game object positions taken from the list provided")]
-	public class Patrol : ActionTask<NavMeshAgent> {
+	public class Patrol : ActionTask<UnityEngine.AI.NavMeshAgent> {
 
 		public enum PatrolMode{
 			Progressive,

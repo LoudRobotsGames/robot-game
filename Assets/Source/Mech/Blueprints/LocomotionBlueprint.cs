@@ -8,4 +8,5 @@ public class LocomotionBlueprint : BaseBlueprint
     public LocomotionType Type;
     public string PathToTopMount;
     public GameObject Model;
+    
 }

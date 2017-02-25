@@ -111,7 +111,7 @@ namespace MovementEffects
 
             for (int i = 0; i < _nextUpdateProcessSlot; i++)
             {
-                Profiler.BeginSample("Processing Coroutine");
+                UnityEngine.Profiling.Profiler.BeginSample("Processing Coroutine");
 
                 if (UpdateProcesses[i] != null && !(Time.time < UpdateProcesses[i].Current))
                 {
@@ -145,7 +145,7 @@ namespace MovementEffects
                     }
                 }
 
-                Profiler.EndSample();
+                UnityEngine.Profiling.Profiler.EndSample();
             }
 
             _runningUpdate = false;
@@ -158,7 +158,7 @@ namespace MovementEffects
 
                 for(int i = 0;i < _nextSlowUpdateProcessSlot;i++)
                 {
-                    Profiler.BeginSample("Processing Coroutine (Slow Update)");
+                    UnityEngine.Profiling.Profiler.BeginSample("Processing Coroutine (Slow Update)");
 
                     if(SlowUpdateProcesses[i] != null && !(Time.time < SlowUpdateProcesses[i].Current))
                     {
@@ -192,7 +192,7 @@ namespace MovementEffects
                         }
                     }
 
-                    Profiler.EndSample();
+                    UnityEngine.Profiling.Profiler.EndSample();
                 }
 
                 _runningSlowUpdate = false;
@@ -202,11 +202,11 @@ namespace MovementEffects
             {
                 _framesSinceUpdate = 0;
 
-                Profiler.BeginSample("Maintenance Task");
+                UnityEngine.Profiling.Profiler.BeginSample("Maintenance Task");
 
                 RemoveUnused();
 
-                Profiler.EndSample();
+                UnityEngine.Profiling.Profiler.EndSample();
             }
         }
 
@@ -216,7 +216,7 @@ namespace MovementEffects
 
             for (int i = 0; i < _nextFixedUpdateProcessSlot; i++)
             {
-                Profiler.BeginSample("Processing Coroutine");
+                UnityEngine.Profiling.Profiler.BeginSample("Processing Coroutine");
 
                 if (FixedUpdateProcesses[i] != null && !(Time.time < FixedUpdateProcesses[i].Current))
                 {
@@ -250,7 +250,7 @@ namespace MovementEffects
                     }
                 }
 
-                Profiler.EndSample();
+                UnityEngine.Profiling.Profiler.EndSample();
             }
 
             _runningFixedUpdate = false;
@@ -262,7 +262,7 @@ namespace MovementEffects
 
             for (int i = 0; i < _nextLateUpdateProcessSlot; i++)
             {
-                Profiler.BeginSample("Processing Coroutine");
+                UnityEngine.Profiling.Profiler.BeginSample("Processing Coroutine");
 
                 if (LateUpdateProcesses[i] != null && !(Time.time < LateUpdateProcesses[i].Current))
                 {
@@ -296,7 +296,7 @@ namespace MovementEffects
                     }
                 }
 
-                Profiler.EndSample();
+                UnityEngine.Profiling.Profiler.EndSample();
             }
 
             _runningLateUpdate = false;
@@ -1122,7 +1122,7 @@ namespace MovementEffects
         [System.Obsolete("Unity coroutine function, use RunCoroutine instead.")]
         public new Coroutine StartCoroutine_Auto(IEnumerator routine)
         {
-            return base.StartCoroutine_Auto(routine);
+            return base.StartCoroutine(routine);
         }
 
         [System.Obsolete("Unity coroutine function, use KillCoroutine instead.")]

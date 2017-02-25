@@ -9,6 +9,10 @@ public class MechUserControl : MonoBehaviour
     [SerializeField] private Transform m_Torso;
     [SerializeField] private Transform m_TiltPivot;
     [SerializeField] private Camera m_Camera;
+    public Transform Torso { set { m_Torso = value; } }
+    public Transform TiltPivot { set { m_TiltPivot = value; } }
+    public Camera CockpitCamera { set { m_Camera = value; } }
+
     [Header("Input")]
     public string m_VerticalAxisName = "Vertical";
     public string m_HorizontalAxisName = "Horizontal";
@@ -19,9 +23,9 @@ public class MechUserControl : MonoBehaviour
     public float m_Acceleration = 1f;
     public float m_RotationSmoothing = 20f;
     [Header("Torso")]
-    [SerializeField] private float m_MinVerticalAngle = -5f;
-    [SerializeField] private float m_MaxVerticalAngle = 10f;
-    [SerializeField] private float m_MaxHorizontalAngle = 45f;
+    public float m_MinVerticalAngle = -5f;
+    public float m_MaxVerticalAngle = 10f;
+    public float m_MaxHorizontalAngle = 45f;
     [Header("Weapons")]
     [SerializeField]
     public Image m_Crosshair;
